@@ -1,0 +1,16 @@
+Django-REST -
+    https://www.django-rest-framework.org
+
+    https://realpython.com/test-driven-development-of-a-django-restful-api/
+
+    https://www.youtube.com/watch?v=B38aDwUpcFc
+
+
+For Tags - 
+    https://django-taggit.readthedocs.io/en/latest/getting_started.html
+    https://github.com/glemmaPaul/django-taggit-serializer 
+
+
+Extra -
+    https://blog.logrocket.com/use-django-rest-framework-to-build-a-blog/
+
