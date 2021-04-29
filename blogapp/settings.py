@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'blog',
     'rest_framework',
     'taggit',
-    'taggit_serializer'
+    'taggit_serializer',
+    'corsheaders',
 ]
 
 TAGGIT_CASE_INSENSITIVE = True
@@ -52,7 +53,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 ROOT_URLCONF = 'blogapp.urls'
 
