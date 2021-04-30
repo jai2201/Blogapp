@@ -12,8 +12,8 @@ class Blog(models.Model):
                               upload_to="media/blogimage")
     rank = models.IntegerField()
     likes = models.ManyToManyField(User, blank=True, related_name="blog_likes")
-    published_on = models.DateTimeField(auto_now=True)
-    edited_on = models.DateTimeField(auto_now=True)
+    month = models.CharField(max_length=3, default='')
+    date = models.IntegerField(default='')
     tags = TaggableManager()
 
     def get_count_likes(self):

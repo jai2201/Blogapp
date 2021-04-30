@@ -12,4 +12,4 @@ class BlogSerializer(TaggitSerializer, serializers.ModelSerializer):
     class Meta:
         model = Blog
         fields = ('id', 'author', 'title', 'small_desc', 'full_content',
-                  'image', 'tags', 'rank', 'published_on', 'edited_on')
+                  'image', 'tags', 'rank', 'date', 'month')

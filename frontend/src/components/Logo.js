@@ -1,16 +1,13 @@
 import React from "react";
-import Capture from "../Capture3.PNG";
+import Capture from "../finalur.png";
 import "./logo.css";
 const Logo = () => (
-	<div>
+	<center>
 		<img
 			src={Capture}
-			height="80"
-			width="250"
-			alt=""
-			style={{ marginLeft: 530 }}
+			style={{ height: 200, width: 400, marginTop: 10, marginBottom: 0 }}
 		/>
-	</div>
+	</center>
 );
 
 export default Logo;

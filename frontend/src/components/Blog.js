@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./blog.css";
 
 const Blog = () => {
 	const [blogs, setBlogs] = useState([]);
@@ -25,21 +24,24 @@ const Blog = () => {
 
 		blogs.map((blogPost) => {
 			return list.push(
-				<div className="row g-0 rounded overflow-hidden flex-md-row mb-3  shadow p-3  h-md position-relative">
+				<div
+					className="row g-0 rounded overflow-hidden flex-md-row mb-0  h-md position-relative"
+					style={{ boxShadow: " 10px 10px 10px gray" }}
+				>
 					<div
 						className="col p-3 d-flex flex-column position-static "
 						style={{ backgroundColor: "whitesmoke" }}
 					>
-						<h3 className="mb-0" style={{ fontFamily: "cursive" }}>
+						<h3 className="mb-0" style={{ fontFamily: "Lobster, cursive" }}>
 							{blogPost.title}
 						</h3>
 						<p
 							className="card-text mb-auto text-muted"
 							style={{
-								fontSize: 14,
+								fontSize: 17,
 								marginLeft: 2,
 								marginTop: 5,
-								fontFamily: "cursive",
+								fontFamily: "Galdeano, sans-serif",
 							}}
 						>
 							{blogPost.small_desc}
@@ -48,7 +50,7 @@ const Blog = () => {
 								style={{
 									textDecoration: "none",
 									color: "#60a3bc",
-									fontFamily: "cursive",
+									fontFamily: "Galdeano, sans-serif",
 								}}
 							>
 								Read More
@@ -56,15 +58,21 @@ const Blog = () => {
 						</p>
 						<p
 							className="card-text mb-auto"
-							style={{ marginLeft: 2, fontFamily: "cursive" }}
+							style={{ marginLeft: 2, fontFamily: "Galdeano, sans-serif" }}
 						>
-							By - {blogPost.author}
+							By - <b> {blogPost.author}</b>
+						</p>
+						<p
+							className="card-text mb-auto"
+							style={{ marginLeft: 2, fontFamily: "Galdeano, sans-serif" }}
+						>
+							{blogPost.date} {blogPost.month}
 						</p>
 					</div>
 					<div className="col-auto d-none d-lg-block">
 						<img
 							width="170"
-							height="155"
+							height="170"
 							src={blogPost.image}
 							alt="thumbnail"
 						/>
@@ -75,9 +83,9 @@ const Blog = () => {
 
 		for (let i = 0; i < list.length; i += 2) {
 			result.push(
-				<div key={i} className="row mb-2">
-					<div className="col-md-6">{list[i]}</div>
-					<div className="col-md-6">{list[i + 1] ? list[i + 1] : null}</div>
+				<div key={i} className="row mb-0">
+					<div className="col-md-6 p-4">{list[i]}</div>
+					<div className="col-md-6 p-4">{list[i + 1] ? list[i + 1] : null}</div>
 				</div>
 			);
 		}

@@ -1,6 +1,9 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./blogdetail.css";
+import ScrollButton from "./ScrollButton";
+
 const BlogDetail = (props) => {
 	const [blog, setBlog] = useState({});
 
@@ -22,49 +25,115 @@ const BlogDetail = (props) => {
 
 	return (
 		<div className="container mt-3">
-			<h2 className="title" style={{ fontFamily: "cursive" }}>
-				{blog.title}
-			</h2>
-			<p
-				className="author"
+			<h1
+				className="title"
 				style={{
-					fontSize: 16,
-					textDecoration: "text-muted",
-					fontFamily: "cursive",
+					fontFamily: "Girassol, cursive cursive",
+					color: "whitesmoke",
+					fontSize: 40,
+					fontStretch: "condensed",
 				}}
 			>
-				Author - {blog.author}
-			</p>
-			<center>
-				<img
-					height="450"
-					width="700"
-					src={blog.image}
-					alt="thumbnail"
-					style={{
-						borderRadius: 2,
-					}}
-				/>
-			</center>
+				{blog.title}
+			</h1>
+			<pre
+				className="author"
+				style={{
+					fontSize: 20,
+					textDecoration: "text-muted",
+					fontFamily: "Galdeano, sans-serif",
+					color: "whitesmoke",
+					marginLeft: 4,
+				}}
+			>
+				Author - <b>{blog.author}</b>
+				<pre>
+					{blog.date} {blog.month}
+				</pre>
+			</pre>
+			<div className="image">
+				<center>
+					<img
+						src={blog.image}
+						alt="thumbnail"
+						style={{
+							borderRadius: 2,
+							marginLeft: 4,
+							height: 500,
+							width: 1110,
+						}}
+					/>
+				</center>
+			</div>
 			<h4>{blog.likes}</h4>
-			<div className="mt-3 mb-3">
-				<p style={{ fontFamily: "cursive", fontSize: 15 }}>
+			<div
+				className="mt-3 mb-3"
+				style={{
+					backgroundColor: "white",
+					opacity: 0.5,
+					marginLeft: 4,
+					borderRadius: 4,
+				}}
+			>
+				<p
+					style={{
+						fontFamily: "Galdeano, sans-serif",
+						fontSize: 20,
+						color: "black",
+						marginLeft: 4,
+						padding: 15,
+					}}
+				>
 					{blog.full_content}
 				</p>
 			</div>
-			<h6 className="text-muted mt-2" style={{ fontFamily: "cursive" }}>
+			<h6
+				className=" mt-2"
+				style={{
+					fontFamily: " Galdeano, sans-serif",
+					color: "whitesmoke",
+					fontSize: 22,
+					marginLeft: 4,
+				}}
+			>
 				Rank - {blog.rank}
 			</h6>
-
-			<p style={{ fontFamily: "cursive" }}>Tags - {blog.tags}</p>
+			<p
+				style={{
+					fontSize: 22,
+					color: "whitesmoke",
+					fontFamily: "Galdeano, sans-serif",
+					marginLeft: 4,
+				}}
+			>
+				Tags -
+				<span
+					style={{
+						fontFamily: "Galdeano, sans-serif",
+						color: "whitesmoke",
+						backgroundColor: "gray",
+						fontSize: 18,
+						marginLeft: 4,
+						padding: 4,
+					}}
+				>
+					{blog.tags}
+				</span>
+			</p>
 
 			<p className="lead mb-5">
 				<button
+					class="button button1"
 					style={{
-						height: 40,
-						hover: PointerEvent,
-						backgroundColor: "dodgerblue",
-						border: "none",
+						backgroundColor: "whitesmoke",
+						border: 0,
+						color: "white",
+						padding: 8,
+						textAlign: "center",
+						textDecoration: "none",
+						margin: 4,
+						cursor: "pointer",
+						marginLeft: 4,
 					}}
 				>
 					<Link
@@ -72,8 +141,8 @@ const BlogDetail = (props) => {
 						className="font-weight-bold"
 						style={{
 							textDecoration: "none",
-							color: "white",
-							fontFamily: "cursive",
+							color: "black",
+							fontFamily: "Galdeano, sans-serif",
 							fontSize: 18,
 						}}
 					>
@@ -81,6 +150,7 @@ const BlogDetail = (props) => {
 					</Link>
 				</button>
 			</p>
+			<ScrollButton />
 		</div>
 	);
 };

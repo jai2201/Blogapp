@@ -57,14 +57,15 @@ def get_post_blogs_user(request, pk):
         print(user.username)
 
         data = {
-            # 'author': request.data.get('author'),
             'title': request.data.get('title'),
             'small_desc': request.data.get('small_desc'),
             'full_content': request.data.get('full_content'),
             'image': request.data.get('image'),
             'rank': int(request.data.get('rank')),
             'likes': request.data.get('likes'),
-            'tags': request.data.get('tags')
+            'tags': request.data.get('tags'),
+            'month': request.data.get('month'),
+            'date': request.data.get('date'),
         }
         serializer = BlogSerializer(data=data, context={'request': request})
         if serializer.is_valid():
