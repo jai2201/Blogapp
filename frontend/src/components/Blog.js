@@ -8,9 +8,7 @@ const Blog = () => {
 	useEffect(() => {
 		const fetchBlogs = async () => {
 			try {
-				const res = await axios.get(
-					`${process.env.REACT_APP_API_URL}/blog/user/1`
-				);
+				const res = await axios.get(`${process.env.REACT_APP_API_URL}/blog/`);
 				setBlogs(res.data);
 			} catch (error) {}
 		};
@@ -93,7 +91,38 @@ const Blog = () => {
 		return result;
 	};
 
-	return <div className="container mt-3">{getBlogs()}</div>;
+	return (
+		<div>
+			<button
+				class="button button1"
+				style={{
+					backgroundColor: "whitesmoke",
+					border: 0,
+					color: "white",
+					padding: 8,
+					textAlign: "center",
+					textDecoration: "none",
+					margin: 4,
+					cursor: "pointer",
+					marginLeft: 1100,
+				}}
+			>
+				<Link
+					to="/post/"
+					className="font-weight-bold"
+					style={{
+						textDecoration: "none",
+						color: "black",
+						fontFamily: "Galdeano, sans-serif",
+						fontSize: 20,
+					}}
+				>
+					Add your Blog
+				</Link>
+			</button>
+			<div className="container mt-2">{getBlogs()}</div>
+		</div>
+	);
 };
 
 export default Blog;

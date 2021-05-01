@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./blogdetail.css";
 import ScrollButton from "./ScrollButton";
 
 const BlogDetail = (props) => {
@@ -65,7 +64,6 @@ const BlogDetail = (props) => {
 					/>
 				</center>
 			</div>
-			<h4>{blog.likes}</h4>
 			<div
 				className="mt-3 mb-3"
 				style={{
@@ -117,7 +115,31 @@ const BlogDetail = (props) => {
 						padding: 4,
 					}}
 				>
-					{blog.tags}
+					{blog.tag1}
+				</span>
+				<span
+					style={{
+						fontFamily: "Galdeano, sans-serif",
+						color: "whitesmoke",
+						backgroundColor: "gray",
+						fontSize: 18,
+						marginLeft: 4,
+						padding: 4,
+					}}
+				>
+					{blog.tag2}
+				</span>
+				<span
+					style={{
+						fontFamily: "Galdeano, sans-serif",
+						color: "whitesmoke",
+						backgroundColor: "gray",
+						fontSize: 18,
+						marginLeft: 4,
+						padding: 4,
+					}}
+				>
+					{blog.tag3}
 				</span>
 			</p>
 
@@ -137,7 +159,7 @@ const BlogDetail = (props) => {
 					}}
 				>
 					<Link
-						to="/blog/user/1"
+						to="/blog/"
 						className="font-weight-bold"
 						style={{
 							textDecoration: "none",

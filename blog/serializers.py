@@ -3,13 +3,11 @@ from .models import Blog
 from django.contrib.auth.models import User
 from taggit_serializer.serializers import TagListSerializerField
 from taggit_serializer.serializers import TaggitSerializer
+from rest_framework.parsers import MultiPartParser, FormParser
 
 
-class BlogSerializer(TaggitSerializer, serializers.ModelSerializer):
-    author = serializers.ReadOnlyField(source='author.username')
-    tags = TagListSerializerField()
+class BlogSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Blog
-        fields = ('id', 'author', 'title', 'small_desc', 'full_content',
-                  'image', 'tags', 'rank', 'date', 'month')
+        fields = '__all__'

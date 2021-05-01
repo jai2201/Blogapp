@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Home = () => (
 	<div>
 		<p style={{ color: "whitesmoke" }}>Welcome</p>
-		<Link className="button_to_enter" to="/blog/user/1">
+		<Link className="button_to_enter" to="/blog/">
 			Check Out our Blogs
 		</Link>
 	</div>
